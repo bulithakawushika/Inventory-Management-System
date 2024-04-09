@@ -1,0 +1,78 @@
+body {
+  font-family: Product Sans, Helvetica, sans-serif;
+  margin-top: 6rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  width: 90%;
+  margin: auto auto;
+  color: #444;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.info {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  font-size: 2rem;
+  color: #888;
+}
+
+.details {
+  font-weight: normal;
+  font-size: 2rem;
+}
+
+.details p {
+  margin-bottom: 1.5rem;
+  font-weight: lighter;
+}
+.details span {
+  font-weight: bold;
+}
+.image img {
+  height: 25rem;
+  border-radius: 5px;
+  margin: 2rem 0;
+}
+
+#sales {
+  display: flex;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 2rem;
+  padding: 1rem 4rem;
+}
+
+#sales div:last-child {
+  margin-left: 4rem;
+}
+
+#sales div p:first-child {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #777;
+  margin-bottom: 0.7rem;
+}
+
+#sales div p:last-child {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #6750a4;
+}

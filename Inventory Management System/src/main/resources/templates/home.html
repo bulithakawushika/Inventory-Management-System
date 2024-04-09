@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <!-- Include CSS stylesheets using Thymeleaf expressions -->
+    <link rel="stylesheet" type="text/css" media="all" href="/css/home.css" th:href="@{/css/home.css}"/>
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" th:href="@{/css/nav.css}"/>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav id="nav">
+    <ul>
+        <!-- Dashboard link (selected) -->
+        <li class="selected">
+            <a th:href="@{/}">DASHBOARD</a>
+        </li>
+        <!-- Items link -->
+        <li>
+            <a th:href="@{/item-list}">ITEMS</a>
+        </li>
+        <!-- Suppliers link -->
+        <li>
+            <a th:href="@{/supplier-list}">SUPPLIERS</a>
+        </li>
+        <!-- Customers link -->
+        <li>
+            <a th:href="@{/client-list}">CUSTOMERS</a>
+        </li>
+    </ul>
+    <!-- Site Title -->
+    <h1>INVENTORA</h1>
+    <!-- Logout Button -->
+    <div>
+        <a th:href="@{/logout}" class="logOut_btn">Logout</a>
+    </div>
+</nav>
+
+<!-- Main Content Container -->
+<div class="container">
+    <!-- Welcome message with dynamic username -->
+    <p>Welcome! <span sec:authentication="principal.username">User</span></p>
+</div>
+<div id="container">
+    <!-- Two sections with item statistics -->
+    <div class="side-by-side">
+        <div>
+            <div>
+                <h3>Total Items</h3>
+                <!-- Display totalItems value -->
+                <p><span th:text="${totalItems}"></span></p>
+            </div>
+            <div>
+                <h3>Number of Suppliers</h3>
+                <!-- Display totalSuppliers value -->
+                <p><span th:text="${totalSuppliers}"></span></p>
+            </div>
+            <div>
+                <h3>Number of Customers</h3>
+                <!-- Display totalCustomers value -->
+                <p><span th:text="${totalCustomers}"></span></p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h3>Quantity In Hand</h3>
+                <!-- Display totalQuantity value -->
+                <p><span th:text="${totalQuantity}"></span></p>
+            </div>
+            <div>
+                <h3>Total Expenditure</h3>
+                <!-- Format and display totalExpenditure value -->
+                <p>LKR <span th:text="${#numbers.formatDecimal(totalExpenditure, 0, 'COMMA', 2, 'POINT')}"></span></p>
+            </div>
+            <div>
+                <h3>Total Revenue</h3>
+                <!-- Format and display totalRevenue value -->
+                <p>LKR <span th:text="${#numbers.formatDecimal(totalRevenue, 0, 'COMMA', 2, 'POINT')}"></span></p>
+            </div>
+        </div>
+    </div>
+    <!-- Horizontal line and Total Projected Income -->
+    <div class="horizontal">
+        <div>
+            <h3>Total Projected Income</h3>
+        </div>
+        <div class="vir-line"></div>
+        <div>
+            <!-- Format and display totalProjectedIncome value -->
+            <p>LKR <span th:text="${#numbers.formatDecimal(totalProjectedIncome, 0, 'COMMA', 2, 'POINT')}"></span></p>
+        </div>
+    </div>
+</div>
+<div>
+    <!-- Report button -->
+    <a class="btn" th:href="@{report}">Report</a>
+</div>
+<!-- Footer Section -->
+<footer>
+    <div>
+        <h3>About</h3>
+        <p>
+            <!-- About information -->
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text ever
+            since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only
+            five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+        </p>
+    </div>
+    <!-- Site Title in Footer -->
+    <h2>INVENTORA</h2>
+    <ul>
+        <!-- Footer Links -->
+        <li><a href="" #>PRIVACY POLICY</a></li>
+        <li><a href="" #>TERMS OF USE</a></li>
+        <li><a href="" #>CONTACT US</a></li>
+        <li><a href="" #>FAQ</a></li>
+    </ul>
+</footer>
+</body>
+</html>

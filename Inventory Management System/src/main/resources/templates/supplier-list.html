@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Suppliers</title>
+
+    <!-- Include CSS stylesheets using Thymeleaf expressions -->
+    <link rel="stylesheet" type="text/css" href="/css/supplier-client-list.css"
+          th:href="@{/css/supplier-client-list.css}"/>
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" th:href="@{/css/nav.css}"/>
+</head>
+<body>
+<!-- Navigation Section -->
+<nav id="nav">
+    <ul>
+        <li>
+            <a th:href="@{/}">DASHBOARD</a>
+        </li>
+        <li>
+            <a th:href="@{/item-list}">ITEMS</a>
+        </li>
+        <li class="selected">
+            <a th:href="@{/supplier-list}">SUPPLIERS</a>
+        </li>
+        <li>
+            <a th:href="@{/client-list}">CUSTOMERS</a>
+        </li>
+    </ul>
+    <h1>INVENTORA</h1>
+    <div>
+        <a th:href="@{/logout}" class="logOut_btn">Logout</a>
+    </div>
+</nav>
+<div id="container">
+    <!-- New Supplier Button -->
+    <div id="new-btn-bar">
+        <h1>Supplier List</h1>
+        <a th:href="@{/add-supplier}" id="add-new-btn">Add New</a>
+    </div>
+    <!-- Supplier List -->
+    <div id="supplier-list" th:each="supplier :${supplierList}">
+        <div id="supplier">
+            <div>
+                <p>Supplier Name: <span th:text="${supplier.supplierName}"></span></p><br>
+                <p>Supplier ID: <span th:text="${supplier.supplierId}"></span></p><br>
+                <p>Supplier Contact No: <span th:text="${supplier.supplierContactNumber}"></span></p><br>
+                <p>NIC: <span th:text="${supplier.supplierNIC}"></span></p><br>
+                <p>Email: <span th:text="${supplier.email}"></span></p><br>
+                <p>Address: <span th:text="${supplier.address}"></span></p><br>
+                <div class="button_list">
+                    <a type="button" class="button" th:href="@{/showSupplierForUpdate/{id}(id=${supplier.supplierId})}">Update</a>
+                    <a type="button" class="button_dlt" th:href="@{/deleteSupplier/{id}(id=${supplier.supplierId})}">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer Section -->
+<footer>
+    <div>
+        <h3>About</h3>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text ever
+            since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only
+            five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+        </p>
+    </div>
+    <h2>INVENTORA</h2>
+    <ul>
+        <li><a href="" #>PRIVACY POLICY</a></li>
+        <li><a href="" #>TERMS OF USE</a></li>
+        <li><a href="" #>CONTACT US</a></li>
+        <li><a href="" #>FAQ</a></li>
+    </ul>
+</footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Customers</title>
+
+    <!-- Include CSS stylesheets using Thymeleaf expressions -->
+    <link rel="stylesheet" type="text/css" href="/css/supplier-client-list.css" th:href="@{/css/supplier-client-list.css}"/>
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" th:href="@{/css/nav.css}"/>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav id="nav">
+    <ul>
+        <!-- Dashboard link -->
+        <li>
+            <a th:href="@{/}">DASHBOARD</a>
+        </li>
+        <!-- Items link -->
+        <li>
+            <a th:href="@{/item-list}">ITEMS</a>
+        </li>
+        <!-- Suppliers link -->
+        <li>
+            <a th:href="@{/supplier-list}">SUPPLIERS</a>
+        </li>
+        <!-- Customers link (selected) -->
+        <li class="selected">
+            <a th:href="@{/client-list}">CUSTOMERS</a>
+        </li>
+    </ul>
+    <!-- Site Title -->
+    <h1>INVENTORA</h1>
+    <!-- Logout Button -->
+    <div>
+        <a th:href="@{/logout}" class="logOut_btn">Logout</a>
+    </div>
+</nav>
+
+<!-- Main Content Container -->
+<div id="container">
+    <!-- Button bar for adding a new client -->
+    <div id="new-btn-bar">
+        <h1>Client List</h1>
+        <!-- Add New Client Button -->
+        <a th:href="@{/add-client}" id="add-new-btn">Add New</a>
+    </div>
+
+    <!-- List of Clients -->
+    <div id="supplier-list" th:each="client :${clientList}">
+        <div id="supplier">
+            <div>
+                <!-- Client Information -->
+                <p>Customer Name: <span th:text="${client.client_name}"></span></p><br>
+                <p>Supplier Id: <span th:text="${client.client_id}"></span></p><br>
+                <p>Supplier Contact No: <span th:text="${client.client_contact}"></span></p><br>
+                <p>NIC: <span th:text="${client.client_NIC}"></span></p><br>
+                <p>Email: <span th:text="${client.client_email}"></span></p><br>
+                <p>Address: <span th:text="${client.client_address}"></span></p><br>
+                <!-- Buttons for updating and deleting clients -->
+                <div class="button_list">
+                    <a type="button" class="button" th:href="@{/update-client/{id}(id=${client.client_id})}">Update</a>
+                    <a type="button" class="button_dlt" th:href="@{/delete-client/{id}(id=${client.client_id})}">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <div>
+        <h3>About</h3>
+        <p>
+            <!-- About information -->
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text ever
+            since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only
+            five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+        </p>
+    </div>
+    <!-- Site Title in Footer -->
+    <h2>INVENTORA</h2>
+    <ul>
+        <!-- Footer Links -->
+        <li><a href="" #>PRIVACY POLICY</a></li>
+        <li><a href="" #>TERMS OF USE</a></li>
+        <li><a href="" #>CONTACT US</a></li>
+        <li><a href="" #>FAQ</a></li>
+    </ul>
+</footer>
+</body>
+</html>

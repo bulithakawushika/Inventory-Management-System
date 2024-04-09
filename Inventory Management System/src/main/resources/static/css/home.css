@@ -1,0 +1,175 @@
+/* Reset some default styles for the page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Product Sans, Helvetica, sans-serif;
+}
+
+/* Set up the overall body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #464646;
+}
+
+/* Styling for the top navigation bar */
+.top-nav {
+    position: fixed;
+    background-color: #FDF8FF;
+    text-align: center;
+    font-weight: lighter;
+    padding: 1rem 0;
+    width: 100%;
+    border-bottom: 1px solid #cecece;
+    z-index: 1;
+}
+
+/* Center the header content */
+header {
+    text-align: center;
+}
+
+/* Styling for the main heading */
+h1 {
+    font-family: Montserrat, serif;
+    font-size: 1.5rem;
+    color: #22005D;
+    letter-spacing: 2px;
+    /* Center the heading horizontally and vertically */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Styling for the logout button */
+.logout-btn {
+    float: right;
+    margin-right: 1rem;
+}
+
+/* Styling for the logout link button */
+.logout-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #AD9FFF;
+    color: black;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the logout link button */
+.logout-link:hover {
+    background-color: #8672FF;
+    cursor: pointer;
+}
+
+/* Styling for the main content container */
+.container {
+    margin-top: 80px; /* Add margin to create space below the top navigation bar */
+}
+
+.container span {
+    color: #26af3c;
+    font-weight: bold;
+}
+
+.container p {
+    color: coral;
+    font-weight: bold;
+}
+
+#container {
+    width: 90%;
+    margin: 2rem auto;
+    color: #444;
+    margin-top: 2rem;
+}
+
+.side-by-side {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-by-side div {
+    width: 45%;
+}
+
+.side-by-side div div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem 4rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.side-by-side h3 {
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.side-by-side p {
+    font-weight: bold;
+    color: #6956dd;
+    font-size: 3rem;
+}
+
+.horizontal {
+    display: flex;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1rem 4rem;
+    margin-top: 2rem;
+    justify-content: space-around;
+}
+
+.horizontal div h3 {
+    margin-top: 2rem;
+    font-weight: normal;
+}
+
+.horizontal div p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.horizontal div:last-child p {
+    color: #6956dd;
+}
+
+.vir-line {
+    height: 90px;
+    width: 2px;
+    background-color: #ccc;
+}
+
+
+/* Styling for the logout link button */
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #AD9FFF;
+    color: black;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the logout link button */
+.btn:hover {
+    background-color: #8672FF;
+    cursor: pointer;
+}

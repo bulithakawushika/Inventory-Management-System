@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Show Item</title>
+
+    <!-- Include CSS stylesheets using Thymeleaf expressions -->
+    <link rel="stylesheet" type="text/css" href="/css/view-item.css" th:href="@{/css/view-item.css}"/>
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" th:href="@{/css/nav.css}"/>
+</head>
+<body>
+<!-- Navigation Section -->
+<nav id="nav">
+    <ul>
+        <li>
+            <a th:href="@{/}">DASHBOARD</a>
+        </li>
+        <li class="selected">
+            <a th:href="@{/item-list}">ITEMS</a>
+        </li>
+        <li>
+            <a th:href="@{/supplier-list}">SUPPLIERS</a>
+        </li>
+        <li>
+            <a th:href="@{/client-list}">CUSTOMERS</a>
+        </li>
+    </ul>
+    <h1>INVENTORA</h1>
+    <div>
+        <a th:href="@{/logout}" class="logOut_btn">Logout</a>
+    </div>
+</nav>
+<div id="container" th:object="${item}">
+    <!-- Item Details -->
+    <h1 th:text="${item.itemName}">Item Name</h1>
+    <div class="item">
+        <p class="info" th:text="${item.description}">Item information</p>
+        <div class="details">
+            <p>Item ID: <span th:text="${item.itemId}">N/A</span></p>
+            <p>Supplier Name: <span th:text="${item.supplier.supplierName}">N/A</span></p>
+            <p>Buy Price: LKR <span th:text="${#numbers.formatDecimal(item.buyPrice, 0, 'COMMA', 2, 'POINT')}">N/A</span></p>
+            <p>Sell Price: LKR <span th:text="${#numbers.formatDecimal(item.sellPrice, 0, 'COMMA', 2, 'POINT')}">N/A</span></p>
+            <p>Quantity: <span th:text="${item.quantity}">N/A</span></p>
+        </div>
+        <div class="image">
+            <img
+                    th:src="${item.imageUrl}"
+                    alt="item picture"
+            />
+        </div>
+    </div>
+</div>
+<!-- Footer Section -->
+<footer>
+    <div>
+        <h3>About</h3>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text ever
+            since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only
+            five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+        </p>
+    </div>
+    <h2>INVENTORA</h2>
+    <ul>
+        <li><a href="" #>PRIVACY POLICY</a></li>
+        <li><a href="" #>TERMS OF USE</a></li>
+        <li><a href="" #>CONTACT US</a></li>
+        <li><a href="" #>FAQ</a></li>
+    </ul>
+</footer>
+</body>
+</html>

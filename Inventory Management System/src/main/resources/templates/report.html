@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Inventory Report</title>
+
+    <!-- Include CSS stylesheet using Thymeleaf expression -->
+    <link rel="stylesheet" type="text/css" media="all" href="/css/report.css" th:href="@{/css/report.css}"/>
+</head>
+<body>
+<!-- Header Section -->
+<header id="nav">
+    <!-- Home link with INVENTORA title -->
+    <a th:href="@{/}" class="header-link">
+        <h1>INVENTORA</h1>
+    </a>
+</header>
+<div class="table-container">
+    <!-- Items Table -->
+    <h2>Items</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Buy Price</th>
+            <th>Sell Price</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over items and populate the table rows -->
+        <tr th:each="item : ${itemList}">
+            <td th:text="${item.itemId}"></td>
+            <td th:text="${item.itemName}"></td>
+            <td th:text="${item.description}"></td>
+            <td th:text="${#numbers.formatDecimal(item.buyPrice, 0, 'COMMA', 2, 'POINT')}"></td>
+            <td th:text="${#numbers.formatDecimal(item.sellPrice, 0, 'COMMA', 2, 'POINT')}"></td>
+            <td th:text="${item.quantity}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Customers Table -->
+    <h2>Customers</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over customers and populate the table rows -->
+        <tr th:each="customer : ${customerList}">
+            <td th:text="${customer.client_id}"></td>
+            <td th:text="${customer.client_name}"></td>
+            <td th:text="${customer.client_email}"></td>
+            <td th:text="${customer.client_contact}"></td>
+            <td th:text="${customer.client_address}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Suppliers Table -->
+    <h2>Suppliers</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Supplier ID</th>
+            <th>Supplier Name</th>
+            <th>NIC</th>
+            <th>Contact Number</th>
+            <th>Email</th>
+            <th>Address</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over suppliers and populate the table rows -->
+        <tr th:each="supplier : ${supplierList}">
+            <td th:text="${supplier.supplierId}"></td>
+            <td th:text="${supplier.supplierName}"></td>
+            <td th:text="${supplier.supplierNIC}"></td>
+            <td th:text="${supplier.supplierContactNumber}"></td>
+            <td th:text="${supplier.email}"></td>
+            <td th:text="${supplier.address}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="btn-container">
+    <!-- Export PDF buttons -->
+    <a class="btn" th:href="@{report/item-pdf}">Export Items PDF</a>
+    <a class="btn" th:href="@{report/customer-pdf}">Export Customers PDF</a>
+    <a class="btn" th:href="@{report/supplier-pdf}">Export Suppliers PDF</a>
+</div>
+</body>
+</html>

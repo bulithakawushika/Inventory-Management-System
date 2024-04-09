@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* CSS code for scaling the image */
+        img {
+            padding-top: 10%;
+            max-width: 30%; /* Set the maximum width to 100% of its container */
+            height: auto; /* Maintain the aspect ratio */
+            display: block; /* Remove any inline spacing */
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        p {
+            font-size: 24px; /* Set a suitable font size for paragraphs */
+            color: #555; /* Set the color of paragraph text */
+            margin: 10px 0; /* Add some vertical margin to paragraphs */
+        }
+    </style>
+</head>
+<body>
+<img src="/images/404.jpg" alt="background" th:src="@{/images/404.jpg}">
+<p align="center">Page Not Found!</p>
+<p align="center">URL doesn't exist.</p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Registration</title>
+
+    <!-- Include CSS stylesheet using Thymeleaf expression -->
+    <link rel="stylesheet" type="text/css" media="all" href="/css/registration.css" th:href="@{/css/registration.css}"/>
+</head>
+<body>
+<!-- Header Section -->
+<header>
+    <h1>INVENTORA</h1>
+</header>
+<!-- Background Image Section -->
+<div class="bg-image">
+    <!-- Background Image -->
+    <img src="/images/bg.jpg" alt="background" th:src="@{/images/bg.jpg}">
+    <div class="registration-form">
+        <!-- Registration Form -->
+        <form class="form-container" th:action="@{/registration}" method="post" th:object="${user}">
+            <h2>Sign up here</h2>
+            <!-- First Name Input Field -->
+            <div class="form-group">
+                <label for="firstname">
+                    First Name
+                </label>
+                <input type="text" class="input-field" id="firstname" name="firstname" th:field="*{firstName}" required
+                       autofocus="autofocus"/>
+            </div>
+            <!-- Last Name Input Field -->
+            <div class="form-group">
+                <label for="lastname">
+                    Last Name
+                </label>
+                <input type="text" class="input-field" id="lastname" name="lastname" th:field="*{lastName}" required
+                       autofocus="autofocus"/>
+            </div>
+            <!-- Email Input Field -->
+            <div class="form-group">
+                <label for="email">
+                    Email
+                </label>
+                <input type="text" class="input-field" id="email" name="email" th:field="*{email}" required
+                       autofocus="autofocus"/>
+            </div>
+            <!-- Password Input Field -->
+            <div class="form-group">
+                <label for="password">
+                    Password
+                </label>
+                <input type="password" class="input-field" id="password" name="password" th:field="*{password}" required
+                       autofocus="autofocus"/>
+            </div>
+            <!-- Registration Button -->
+            <button type="submit" class="submit-btn">Register</button>
+            <!-- Login Link for Already Registered Users -->
+            <span>Already registered? <a href="/" th:href="@{/login}">Login here</a> </span>
+        </form>
+    </div>
+    <!-- Success Message for Successful Registration -->
+    <div th:if="${param.success}">
+        <div class="alert-success">
+            <span><strong>Success!</strong> You've registered successfully.</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

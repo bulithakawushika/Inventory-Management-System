@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Login</title>
+
+    <!-- Include CSS stylesheet using Thymeleaf expression -->
+    <link rel="stylesheet" type="text/css" media="all" href="/css/login.css" th:href="@{/css/login.css}"/>
+</head>
+<body>
+<!-- Header Section -->
+<header>
+    <h1>INVENTORA</h1>
+</header>
+<!-- Background Image Section -->
+<div class="bg-image">
+    <!-- Background Image -->
+    <img src="/images/bg.jpg" alt="background" th:src="@{/images/bg.jpg}">
+    <div class="login-form">
+        <!-- Login Form -->
+        <form class="form-container" th:action="@{/login}" method="post">
+            <h2>Please log in here</h2>
+            <!-- Username Input Field -->
+            <div class="form-group">
+                <label for="username">Email</label>
+                <input type="text" class="input-field" id="username" name="username" autofocus="autofocus">
+            </div>
+            <!-- Password Input Field -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="input-field" id="password" name="password">
+            </div>
+            <!-- Login Button -->
+            <button type="submit" class="submit-btn">Login</button>
+            <!-- Registration Link -->
+            <p>New User?<a href="/" th:href="@{/registration}"> Register here</a></p>
+        </form>
+    </div>
+    <!-- Error Message for Invalid Login -->
+    <div th:if="${param.error}">
+        <div class="alert-danger">
+            <span><strong>Error!</strong> Invalid username or password.</span>
+        </div>
+    </div>
+    <!-- Logout Confirmation Message -->
+    <div th:if="${param.logout}">
+        <div class="alert-info">
+            <span>You have been logged out.</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

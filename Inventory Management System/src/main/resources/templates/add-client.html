@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Add Client</title>
+
+    <!-- Include CSS stylesheets using Thymeleaf expressions -->
+    <link rel="stylesheet" type="text/css" href="/css/add_sup_cus.css" th:href="@{/css/add_sup_cus.css}"/>
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" th:href="@{/css/nav.css}"/>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav id="nav">
+    <ul>
+        <!-- Dashboard link -->
+        <li>
+            <a th:href="@{/}">DASHBOARD</a>
+        </li>
+        <!-- Items link -->
+        <li>
+            <a th:href="@{/item-list}">ITEMS</a>
+        </li>
+        <!-- Suppliers link -->
+        <li>
+            <a th:href="@{/supplier-list}">SUPPLIERS</a>
+        </li>
+        <!-- Customers link (selected) -->
+        <li class="selected">
+            <a th:href="@{/client-list}">CUSTOMERS</a>
+        </li>
+    </ul>
+    <!-- Site Title -->
+    <h1>INVENTORA</h1>
+    <!-- Logout Button -->
+    <div>
+        <a th:href="@{/logout}" class="logOut_btn">Logout</a>
+    </div>
+</nav>
+
+<!-- Main Content Container -->
+<div id="container">
+    <!-- Page Title -->
+    <h1>Add New Client</h1>
+
+    <!-- Client Information Form -->
+    <form th:action="@{/submit-client}" method="post" th:object="${client}">
+        <div>
+            <label for="client_id">Client Id:</label>
+            <!-- Input field for Client Id -->
+            <input type="text" id="client_id" name="client_id" th:field="*{client_id}" required/>
+        </div>
+        <div>
+            <label for="client_name">Client Name:</label>
+            <!-- Input field for Client Name -->
+            <input type="text" id="client_name" name="client_name" th:field="*{client_name}" required/>
+        </div>
+        <div>
+            <label for="NIC number">NIC number:</label>
+            <!-- Input field for NIC number -->
+            <input type="text" id="NIC number" name="NIC number" th:field="*{client_NIC}" required/>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <!-- Input field for Email -->
+            <input type="email" id="email" name="email" th:field="*{client_email}" required/>
+        </div>
+        <div>
+            <label for="phone">Phone Number:</label>
+            <!-- Input field for Phone Number -->
+            <input type="tel" id="phone" name="phone" th:field="*{client_contact}" required/>
+        </div>
+        <div class="address">
+            <label for="address">Address:</label>
+            <!-- Textarea for Address -->
+            <textarea id="address" name="address" rows="4" th:field="*{client_address}" required></textarea>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <div>
+        <h3>About</h3>
+        <p>
+            <!-- About information -->
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text ever
+            since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only
+            five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+        </p>
+    </div>
+    <!-- Site Title in Footer -->
+    <h2>INVENTORA</h2>
+    <ul>
+        <!-- Footer Links -->
+        <li><a href="" #>PRIVACY POLICY</a></li>
+        <li><a href="" #>TERMS OF USE</a></li>
+        <li><a href="" #>CONTACT US</a></li>
+        <li><a href="" #>FAQ</a></li>
+    </ul>
+</footer>
+</body>
+</html>

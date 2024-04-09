@@ -1,0 +1,121 @@
+/* Add space between tables and screen edges */
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px; /* Add margin to create space between tables and screen edges */
+    padding: 0;
+}
+
+/* Style headings */
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Style tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style table headers */
+thead {
+    background-color: #333;
+    color: white;
+}
+
+/* Style table rows */
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Style hyperlinks (optional) */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Button Container */
+.btn-container {
+    text-align: center;
+    margin-top: 30px; /* Adjust the spacing as needed */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btn {
+    padding: 8px 15px;
+    background-color: #AD9FFF;
+    color: black;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.btn:hover {
+    background-color: #8672FF;
+    cursor: pointer;
+}
+
+/* Center the header text and style the hyperlink */
+#nav {
+    text-align: center;
+}
+
+.header-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+.header-link:hover {
+    text-decoration: black;
+}
+
+.table-container {
+    margin-top: 10px;
+}
+
+#nav h1 {
+    font-family: Montserrat, serif;
+    font-size: 1.5rem;
+    color: #22005d;
+    letter-spacing: 2px;
+    /* Center the heading horizontally and vertically */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#nav {
+    width: 100%;
+    background-color: #fdf8ff;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Product Sans, Helvetica, sans-serif;
+}

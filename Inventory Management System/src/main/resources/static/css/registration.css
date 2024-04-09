@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Product Sans, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #464646;
+}
+
+header {
+    position: fixed;
+    background-color: #FDF8FF;
+    text-align: center;
+    font-weight:lighter;
+    padding: 1rem 0;
+    width: 100%;
+    border-bottom: 1px solid #cecece;
+    z-index: 2;
+}
+
+h1 {
+    font-family: Montserrat, serif;
+    font-size: 1.5rem;
+    color: #22005D;
+    letter-spacing: 2px;
+}
+
+h2 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 20%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+form div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+form div:nth-child(2) {
+    padding-top: 2rem;
+}
+
+form div label {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding-left: 3rem;
+}
+
+form div input {
+    margin-right: 3rem;
+
+}
+
+input {
+    width: 300px;
+}
+
+
+form button {
+    margin-top: 2rem;
+    border: none;
+    padding: 0.5rem 3rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: #AD9FFF;
+    color: black;
+}
+
+form button:hover {
+    background-color: #8672FF;
+    cursor: pointer;
+}
+
+a {
+    margin-top: 3rem;
+}
+
+form p {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.form-container {
+    width: 600px;
+    height: 600px;
+    margin: 1rem auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #ffffff;
+    opacity: 0.985;
+}
+
+
+.bg-image {
+    position: relative;
+    background-image: url("static/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.registration-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.alert-success {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    color: #26af3c;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    vertical-align: center;
+}
